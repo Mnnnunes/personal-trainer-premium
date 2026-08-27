@@ -148,7 +148,7 @@ function SectionHeading({ index, title, copy, align = "left" }: { index: string;
 function Logo({ compact = false }: { compact?: boolean }) {
   return (
     <a className="brand" href="#inicio" aria-label={`Ir ao início - ${personal.name}`}>
-      <img className={compact ? "brand-mark compact" : "brand-mark"} src="/manus-storage/personal-trainer-mark_82ae70a0.png" alt="Símbolo geométrico da marca" />
+      <img className={compact ? "brand-mark compact" : "brand-mark"} src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663911480749/JXWNiMufpPraBMTb.png" alt="Símbolo geométrico da marca" />
       {!compact && (
         <span>
           <strong>{personal.name}</strong>
@@ -224,7 +224,7 @@ export default function Home() {
 
       <section className="hero" aria-labelledby="hero-title">
         <motion.div className="hero-media" aria-hidden="true" style={reduced ? undefined : { y: scrolled ? 0 : 0 }}>
-          <img src="/manus-storage/personal-trainer-hero-feminino_7761b1c8.png" alt="Personal trainer em roupa azul-violeta em ambiente de treino" fetchPriority="high" />
+          <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663911480749/amZypFPGrieBGVmT.png" alt="Personal trainer em roupa azul-violeta em ambiente de treino" fetchPriority="high" />
         </motion.div>
         <div className="hero-overlay" />
         <div className="hero-grid" aria-hidden="true" />
@@ -370,7 +370,7 @@ export default function Home() {
 
       <section className="strong-cta section-space">
         <div className="cta-radiance" aria-hidden="true" />
-        <img className="cta-mark" src="/manus-storage/personal-trainer-mark_82ae70a0.png" alt="" aria-hidden="true" />
+        <img className="cta-mark" src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663911480749/JXWNiMufpPraBMTb.png" alt="" aria-hidden="true" />
         <div className="container cta-layout">
           <Reveal><span className="eyebrow"><span>07</span> / PRÓXIMO PASSO</span><h2>Vamos traçar<br />seu <em>plano?</em></h2></Reveal>
           <Reveal delay={0.12} className="cta-copy"><p>Vamos avaliar sua rotina, definir uma direção e transformar o treino em um processo que você consegue sustentar.</p><AppButton href={whatsappUrl}>Conversar sobre meu objetivo <ArrowUpRight size={19} /></AppButton></Reveal>

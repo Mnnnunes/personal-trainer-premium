@@ -12,3 +12,9 @@
 - [x] Remover o entrypoint e as dependências exclusivos do servidor Express.
 - [x] Ajustar os scripts para gerar somente `dist/` via Vite.
 - [x] Executar o build de produção e confirmar a saída estática para deploy.
+
+## Correção de ativo publicado
+
+- [x] Verificar se a foto está presente em `dist/` e se a referência atual depende de rota de desenvolvimento.
+- [x] Incorporar a foto fornecida nos ativos estáticos do Vite e atualizar a referência do hero.
+- [x] Executar o build e confirmar que a URL da foto responde a partir de `dist/`.
