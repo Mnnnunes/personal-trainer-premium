@@ -77,7 +77,7 @@ O logotipo usa um **monograma geométrico abstrato em forma de eixo inclinado**,
 
 ### Cor Assinatura
 
-**Azul Eixo — #183A5A.** Um azul-chumbo profundo que comunica método e desempenho, visível em detalhes técnicos, estados ativos e CTAs.
+**Azul Violeta — #3C35AA.** Um azul-violeta profundo alinhado à roupa da personal, aplicado em ações, marcadores técnicos e momentos ativos da marca.
 
 ## Conteúdo editável priorizado
 

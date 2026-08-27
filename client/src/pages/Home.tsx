@@ -8,7 +8,6 @@ import {
   Activity,
   ArrowDown,
   ArrowUpRight,
-  Award,
   CalendarCheck2,
   Check,
   ChevronRight,
@@ -75,12 +74,12 @@ const resultMetrics = [
 ];
 
 const instagramPosts = [
-  { src: "/manus-storage/personal-trainer-routine_438f7fba.jpg", alt: "Kettlebell e acessórios de treino em estética escura", label: "Rotina" },
-  { src: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=80", alt: "Ambiente de treino com equipamentos", label: "Treino" },
-  { src: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=900&q=80", alt: "Pessoa treinando em academia", label: "Método" },
-  { src: "https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=900&q=80", alt: "Barra e anilhas em treino de força", label: "Força" },
-  { src: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=900&q=80", alt: "Pessoa realizando exercício com halteres", label: "Consistência" },
-  { src: "https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&fit=crop&w=900&q=80", alt: "Detalhe de treino funcional", label: "Performance" },
+  { code: "01", label: "Rotina", detail: "organização que vira constância" },
+  { code: "02", label: "Treino", detail: "movimento com intenção" },
+  { code: "03", label: "Método", detail: "estratégia para evoluir" },
+  { code: "04", label: "Força", detail: "base para o seu desempenho" },
+  { code: "05", label: "Foco", detail: "direção em cada etapa" },
+  { code: "06", label: "Progresso", detail: "processo acima da pressa" },
 ];
 
 function Reveal({ children, className = "", delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
@@ -225,7 +224,7 @@ export default function Home() {
 
       <section className="hero" aria-labelledby="hero-title">
         <motion.div className="hero-media" aria-hidden="true" style={reduced ? undefined : { y: scrolled ? 0 : 0 }}>
-          <img src="/manus-storage/personal-trainer-hero_b10a7b2d.jpg" alt="" fetchPriority="high" />
+          <img src="/manus-storage/personal-trainer-hero-feminino_7761b1c8.png" alt="Personal trainer em roupa azul-violeta em ambiente de treino" fetchPriority="high" />
         </motion.div>
         <div className="hero-overlay" />
         <div className="hero-grid" aria-hidden="true" />
@@ -237,13 +236,14 @@ export default function Home() {
             Seu objetivo.<br />Seu treino.<br /><em>Seu resultado.</em>
           </motion.h1>
           <motion.p className="hero-description" initial={reduced ? false : { opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.35 }}>
-            Treinos personalizados para quem quer evoluir de verdade, com acompanhamento, estratégia e consistência.
+            Estratégia individual, orientação próxima e uma rotina que transforma intenção em progresso mensurável.
           </motion.p>
           <motion.div className="hero-actions" initial={reduced ? false : { opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, delay: 0.49 }}>
             <AppButton href={whatsappUrl}>Quero começar <ArrowUpRight size={18} /></AppButton>
             <AppButton href="#sobre" variant="ghost">Conhecer o trabalho <ChevronRight size={18} /></AppButton>
           </motion.div>
         </div>
+        <div className="hero-image-note" aria-hidden="true"><span>01 / PERSONAL TRAINER</span><i /><small>ESTRATÉGIA PARA A SUA ROTINA</small></div>
         <a className="scroll-cue" href="#numeros"><span><ArrowDown size={15} /></span>Role para conhecer</a>
         <div className="hero-index" aria-hidden="true"><span>01</span><i /> <span>12</span></div>
       </section>
@@ -261,7 +261,11 @@ export default function Home() {
         <div className="section-rule container"><span>02 / SOBRE</span><i /></div>
         <div className="container about-layout">
           <Reveal className="about-image-wrap">
-            <div className="image-frame about-image"><img src="/manus-storage/personal-trainer-about_1a2b24d9.jpg" alt="Personal trainer analisando um plano de treino" loading="lazy" /><span className="image-label">Treino com direção</span></div>
+            <div className="about-graphic" aria-label="Representação visual da metodologia de treino">
+              <div className="about-graphic-top"><span>02</span><i /><small>PLANO INDIVIDUAL</small></div>
+              <div className="about-graphic-core"><ClipboardCheck size={42} strokeWidth={1.2} /><strong>Estratégia que<br />acompanha a<br /><em>sua rotina.</em></strong></div>
+              <div className="about-graphic-bottom"><span>OBJETIVO</span><b /> <span>PROCESSO</span><b /> <span>EVOLUÇÃO</span></div>
+            </div>
             <div className="frame-code">PT / 2026</div>
           </Reveal>
           <Reveal className="about-copy" delay={0.12}>
@@ -327,9 +331,18 @@ export default function Home() {
             </div>
           </Reveal>
           <Reveal className="results-gallery" delay={0.12}>
-            <figure className="result-image main-result"><img src="/manus-storage/personal-trainer-results_7a01b361.jpg" alt="Imagem demonstrativa de treino de força em estúdio" loading="lazy" /><figcaption>Imagem demonstrativa</figcaption></figure>
-            <figure className="result-image side-result"><img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=700&q=80" alt="Imagem demonstrativa de atleta treinando com cordas" loading="lazy" /><figcaption>Processo &amp; técnica</figcaption></figure>
-            <div className="result-mark"><Award size={23} /><span>FOCO<br />NO PROCESSO</span></div>
+            <figure className="result-image main-result result-panel">
+              <span className="result-panel-index">05 / 04</span>
+              <div className="result-bars"><i /><i /><i /><i /></div>
+              <strong>PROGRESSO<br />COM <em>DIREÇÃO</em></strong>
+              <figcaption>Indicadores demonstrativos</figcaption>
+            </figure>
+            <figure className="result-image side-result result-panel result-panel-small">
+              <span>PLANO ATIVO</span>
+              <div className="result-points"><i /><i /><i /><i /></div>
+              <figcaption>Processo &amp; técnica</figcaption>
+            </figure>
+            <div className="result-mark"><ClipboardCheck size={23} /><span>FOCO<br />NO PROCESSO</span></div>
           </Reveal>
         </div>
       </section>
@@ -359,8 +372,8 @@ export default function Home() {
         <div className="cta-radiance" aria-hidden="true" />
         <img className="cta-mark" src="/manus-storage/personal-trainer-mark_82ae70a0.png" alt="" aria-hidden="true" />
         <div className="container cta-layout">
-          <Reveal><span className="eyebrow"><span>07</span> / PRÓXIMO PASSO</span><h2>Está pronto<br />para <em>começar?</em></h2></Reveal>
-          <Reveal delay={0.12} className="cta-copy"><p>Seu objetivo não precisa ficar para depois. Dê o primeiro passo e descubra como um acompanhamento personalizado pode transformar sua rotina de treino.</p><AppButton href={whatsappUrl}>Quero começar agora <ArrowUpRight size={19} /></AppButton></Reveal>
+          <Reveal><span className="eyebrow"><span>07</span> / PRÓXIMO PASSO</span><h2>Vamos traçar<br />seu <em>plano?</em></h2></Reveal>
+          <Reveal delay={0.12} className="cta-copy"><p>Vamos avaliar sua rotina, definir uma direção e transformar o treino em um processo que você consegue sustentar.</p><AppButton href={whatsappUrl}>Conversar sobre meu objetivo <ArrowUpRight size={19} /></AppButton></Reveal>
         </div>
       </section>
 
@@ -370,9 +383,9 @@ export default function Home() {
           <Reveal delay={0.12}><AppButton href={personal.instagramUrl} variant="outline" className="instagram-button">Seguir no Instagram <Instagram size={17} /></AppButton></Reveal>
         </div>
         <div className="container instagram-grid">
-          {instagramPosts.map((post, index) => <Reveal key={post.label} delay={(index % 3) * 0.06}><a className="instagram-post" href={personal.instagramUrl} target="_blank" rel="noreferrer" aria-label={`Abrir Instagram: ${post.label}`}><img src={post.src} alt={post.alt} loading="lazy" /><span>{post.label}</span><i><Instagram size={18} /></i></a></Reveal>)}
+          {instagramPosts.map((post, index) => <Reveal key={post.label} delay={(index % 3) * 0.06}><a className="instagram-post" href={personal.instagramUrl} target="_blank" rel="noreferrer" aria-label={`Abrir Instagram: ${post.label}`}><small>{post.code} / POST</small><strong>{post.label}</strong><p>{post.detail}</p><i><Instagram size={18} /></i></a></Reveal>)}
         </div>
-        <p className="container instagram-note">Grade demonstrativa: substitua as imagens pelos conteúdos reais do perfil.</p>
+        <p className="container instagram-note">Grade conceitual: conecte o perfil para exibir seus conteúdos reais.</p>
       </section>
 
       <section id="contato" className="contact-section section-space">
