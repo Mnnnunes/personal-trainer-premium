@@ -18,3 +18,10 @@
 - [x] Verificar se a foto está presente em `dist/` e se a referência atual depende de rota de desenvolvimento.
 - [x] Incorporar a foto fornecida nos ativos estáticos do Vite e atualizar a referência do hero.
 - [x] Executar o build e confirmar que a URL da foto responde a partir de `dist/`.
+
+## Substituição por fundos de treino
+
+- [x] Gerar fundos premium de treino e equipamentos sem pessoas.
+- [x] Publicar os novos ativos em URLs compatíveis com deploy.
+- [x] Aplicar os fundos no hero e remover a foto da personal.
+- [x] Validar desktop, mobile e build final.

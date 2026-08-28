@@ -74,12 +74,12 @@ const resultMetrics = [
 ];
 
 const instagramPosts = [
-  { code: "01", label: "Rotina", detail: "organização que vira constância" },
-  { code: "02", label: "Treino", detail: "movimento com intenção" },
-  { code: "03", label: "Método", detail: "estratégia para evoluir" },
-  { code: "04", label: "Força", detail: "base para o seu desempenho" },
-  { code: "05", label: "Foco", detail: "direção em cada etapa" },
-  { code: "06", label: "Progresso", detail: "processo acima da pressa" },
+  { code: "01", label: "Rotina", detail: "organização que vira constância", image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80" },
+  { code: "02", label: "Treino", detail: "movimento com intenção", image: "https://images.unsplash.com/photo-1579758629938-03607ccdbaba?auto=format&fit=crop&w=1200&q=80" },
+  { code: "03", label: "Método", detail: "estratégia para evoluir", image: "https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=1200&q=80" },
+  { code: "04", label: "Força", detail: "base para o seu desempenho", image: "https://images.unsplash.com/photo-1546483875-ad9014c88eba?auto=format&fit=crop&w=1200&q=80" },
+  { code: "05", label: "Foco", detail: "direção em cada etapa", image: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=1200&q=80" },
+  { code: "06", label: "Progresso", detail: "processo acima da pressa", image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1200&q=80" },
 ];
 
 function Reveal({ children, className = "", delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
@@ -224,7 +224,7 @@ export default function Home() {
 
       <section className="hero" aria-labelledby="hero-title">
         <motion.div className="hero-media" aria-hidden="true" style={reduced ? undefined : { y: scrolled ? 0 : 0 }}>
-          <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663911480749/amZypFPGrieBGVmT.png" alt="Personal trainer em roupa azul-violeta em ambiente de treino" fetchPriority="high" />
+          <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663911480749/WAmJSmLpRWZlaMrs.jpg" alt="Estúdio de treino com rack, barras e equipamentos de força" fetchPriority="high" />
         </motion.div>
         <div className="hero-overlay" />
         <div className="hero-grid" aria-hidden="true" />
@@ -243,7 +243,7 @@ export default function Home() {
             <AppButton href="#sobre" variant="ghost">Conhecer o trabalho <ChevronRight size={18} /></AppButton>
           </motion.div>
         </div>
-        <div className="hero-image-note" aria-hidden="true"><span>01 / PERSONAL TRAINER</span><i /><small>ESTRATÉGIA PARA A SUA ROTINA</small></div>
+        <div className="hero-image-note" aria-hidden="true"><span>01 / TRAINING STUDIO</span><i /><small>FORÇA, TÉCNICA E CONSISTÊNCIA</small></div>
         <a className="scroll-cue" href="#numeros"><span><ArrowDown size={15} /></span>Role para conhecer</a>
         <div className="hero-index" aria-hidden="true"><span>01</span><i /> <span>12</span></div>
       </section>
@@ -331,13 +331,13 @@ export default function Home() {
             </div>
           </Reveal>
           <Reveal className="results-gallery" delay={0.12}>
-            <figure className="result-image main-result result-panel">
+            <figure className="result-image main-result result-panel" style={{ backgroundImage: "linear-gradient(135deg, rgba(7, 12, 18, .9), rgba(7, 12, 18, .52)), url('https://images.unsplash.com/photo-1579758629938-03607ccdbaba?auto=format&fit=crop&w=1200&q=80')" }}>
               <span className="result-panel-index">05 / 04</span>
               <div className="result-bars"><i /><i /><i /><i /></div>
               <strong>PROGRESSO<br />COM <em>DIREÇÃO</em></strong>
               <figcaption>Indicadores demonstrativos</figcaption>
             </figure>
-            <figure className="result-image side-result result-panel result-panel-small">
+            <figure className="result-image side-result result-panel result-panel-small" style={{ backgroundImage: "linear-gradient(135deg, rgba(10, 18, 28, .82), rgba(10, 18, 28, .42)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80')" }}>
               <span>PLANO ATIVO</span>
               <div className="result-points"><i /><i /><i /><i /></div>
               <figcaption>Processo &amp; técnica</figcaption>
@@ -383,7 +383,7 @@ export default function Home() {
           <Reveal delay={0.12}><AppButton href={personal.instagramUrl} variant="outline" className="instagram-button">Seguir no Instagram <Instagram size={17} /></AppButton></Reveal>
         </div>
         <div className="container instagram-grid">
-          {instagramPosts.map((post, index) => <Reveal key={post.label} delay={(index % 3) * 0.06}><a className="instagram-post" href={personal.instagramUrl} target="_blank" rel="noreferrer" aria-label={`Abrir Instagram: ${post.label}`}><small>{post.code} / POST</small><strong>{post.label}</strong><p>{post.detail}</p><i><Instagram size={18} /></i></a></Reveal>)}
+          {instagramPosts.map((post, index) => <Reveal key={post.label} delay={(index % 3) * 0.06}><a className="instagram-post" style={{ backgroundImage: `linear-gradient(180deg, rgba(6, 10, 14, .36), rgba(6, 10, 14, .94)), url('${post.image}')` }} href={personal.instagramUrl} target="_blank" rel="noreferrer" aria-label={`Abrir Instagram: ${post.label}`}><small>{post.code} / POST</small><strong>{post.label}</strong><p>{post.detail}</p><i><Instagram size={18} /></i></a></Reveal>)}
         </div>
         <p className="container instagram-note">Grade conceitual: conecte o perfil para exibir seus conteúdos reais.</p>
       </section>
